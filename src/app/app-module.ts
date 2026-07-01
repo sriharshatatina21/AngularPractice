@@ -3,18 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { Practice } from './Practice/practice';
+import { UserModule } from './user/user-module';
 
 @NgModule({
-  declarations: [
-    App
-  ],
+  declarations: [App, Practice],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule, 
+    AppRoutingModule,
+    
   ],
-  providers: [
-    provideBrowserGlobalErrorListeners(),
+  exports:[
+    UserModule 
   ],
-  bootstrap: [App]
+  providers: [provideBrowserGlobalErrorListeners()],
+  bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}
